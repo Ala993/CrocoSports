@@ -1,0 +1,38 @@
+<app-banner title="Signup"></app-banner>
+<div class="site-section">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-lg-9" >
+                <form [formGroup]="signupForm">
+                    
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="firstName" placeholder="Fist Name">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="email" placeholder="Email">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control" formControlName="pwd" placeholder="Password">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" class="form-control" formControlName="pwdConfirm"
+                            placeholder="Password confirmation">
+
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary py-3 px-5" (click)='signup()'>Signup </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
