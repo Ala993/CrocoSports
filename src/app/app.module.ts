@@ -18,7 +18,14 @@ import { MatchesComponent } from './components/matches/matches.component';
 import { PlayresComponent } from './components/playres/playres.component';
 import { PlayerComponent } from './components/player/player.component';
 import { BannerComponent } from './components/banner/banner.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddMatchComponent } from './components/add-match/add-match.component';
+import { AddTeamComponent } from './components/add-team/add-team.component';
+import { AddPlayerComponent } from './components/add-player/add-player.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { AdminPlayerComponent } from './components/admin-player/admin-player.component';
+import { AdminTeamsComponent } from './components/admin-teams/admin-teams.component';
+import { AdminMatchesComponent } from './components/admin-matches/admin-matches.component';
 
 @NgModule({
   declarations: [
@@ -37,12 +44,20 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatchesComponent,
     PlayresComponent,
     PlayerComponent,
-    BannerComponent
+    BannerComponent,
+    AddMatchComponent,
+    AddTeamComponent,
+    AddPlayerComponent,
+    AdminComponent,
+    AdminPlayerComponent,
+    AdminTeamsComponent,
+    AdminMatchesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

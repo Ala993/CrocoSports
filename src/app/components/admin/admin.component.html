@@ -1,0 +1,24 @@
+<app-banner title='Admin'></app-banner>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#teams" role="tab" aria-controls="home" aria-selected="true">Admin teams</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#player" role="tab" aria-controls="profile" aria-selected="false">Admin Players</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#matches" role="tab" aria-controls="contact" aria-selected="false">Admin matches</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="teams" role="tabpanel" aria-labelledby="home-tab">
+        <app-admin-teams></app-admin-teams>
+    </div>
+    <div class="tab-pane fade" id="player" role="tabpanel" aria-labelledby="profile-tab">
+        <app-admin-player></app-admin-player>
+    </div>
+        
+    <div class="tab-pane fade" id="matches" role="tabpanel" aria-labelledby="contact-tab">
+        <app-admin-matches></app-admin-matches>
+    </div>
+  </div>
