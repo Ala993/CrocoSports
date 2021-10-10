@@ -12,5 +12,11 @@ export class ResultsComponent implements OnInit {
 
   ngOnInit() {
   }
+  winLoss (scoreOne, scoreTwo) : string{
+  if (scoreOne>scoreTwo) {
+   return '(win)'} 
+    else if (scoreOne<scoreTwo) { return '(loss)'} 
+    else { return '(draw)'}
+  }
 
 }

@@ -1,1 +1,23 @@
-<p>admin-matches works!</p>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>teamOne</th>
+            <th>teamTwo</th>
+            <th>scoreOne</th>
+            <th>scoreTwo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let matche of matches'>
+            <td>{{matche.teamOne}}</td>
+            <td>{{matche.teamTwo}}</td>
+            <td>{{matche.scoreOne}}</td>
+            <td>{{matche.scoreTwo}}</td>
+            <td>
+                <button class='btn btn-success' (click)="goToDisplay(matche.id)"> display</button>
+                <button class='btn btn-info'> Add a match</button>
+                <button class='btn btn-danger' (click)='deleteMatch(matche.id)'> delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

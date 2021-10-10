@@ -3,25 +3,25 @@
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-lg-9">
-                <form #addMatchForm="ngForm" (ngSubmit)='addMatch()'>
+                <form #addMatchForm="ngForm" (ngSubmit)='addmatch()'>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="scoreOne" placeholder="First team score">
+                        <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="match.scoreOne" placeholder="First team score">
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="scoreTwo" placeholder="Second team score">
+                        <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="match.scoreTwo" placeholder="Second team score">
                     </div>
  
                     <div class="form-group">
-                        <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="teamOne" placeholder="First team name">
+                        <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="match.teamOne" placeholder="First team name">
                     </div>
  
                     <div class="form-group">
-                        <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="teamTwo" placeholder="Second team name">
+                        <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="match.teamTwo" placeholder="Second team name">
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary py-3 px-5" >Signup </button>
+                        <button type="submit" class="btn btn-primary py-3 px-5" >Add Match </button>
                     </div>
 
                 </form>

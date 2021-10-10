@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { PasswordValidator } from '../validation-result';
+import { SignupValidationService } from 'src/app/signup-validation.service';
 
 @Component({
   selector: 'app-signup',
@@ -9,7 +9,7 @@ import { PasswordValidator } from '../validation-result';
 })
 export class SignupComponent implements OnInit {
   signupForm : FormGroup;
-  constructor(private formBuilder : FormBuilder) { }
+  constructor(private formBuilder : FormBuilder , private validator : SignupValidationService ) { }
 
   ngOnInit() {
     this.signupForm = this.formBuilder.group({
@@ -17,8 +17,8 @@ export class SignupComponent implements OnInit {
       lastName:['',[Validators.required,Validators.minLength(5)]],
       email:['',[Validators.required,Validators.email]],
       pwd:['', [Validators.required,Validators.minLength(8),
-        PasswordValidator.numstrong,PasswordValidator.upstrong,PasswordValidator.lowstrong]],
-      pwdConfirm:['',[]]
+        this.validator.numstrong,this.validator.lowstrong,this.validator.upstrong]],
+      pwdConfirm:['']
     })
   }
   signup(){

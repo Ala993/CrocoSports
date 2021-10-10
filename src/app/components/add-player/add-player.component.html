@@ -6,18 +6,18 @@
                 <form #addPlayerForm="ngForm" (ngSubmit)='addPlayer()'>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="name" placeholder="Player's name">
+                        <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="player.name" placeholder="Player's name">
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="age" placeholder="Player's age ">
+                        <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="player.age" placeholder="Player's age ">
                     </div>
  
                     <div class="form-group">
-                        <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="post" placeholder="Player's Post">
+                        <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="player.post" placeholder="Player's Post">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="nbr" placeholder="Player's Number">
+                        <input type="text" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="player.nbr" placeholder="Player's Number">
                     </div>
 
                     <div class="form-group">

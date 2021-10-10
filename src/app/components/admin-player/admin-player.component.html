@@ -1,1 +1,23 @@
-<p>admin-player works!</p>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>post</th>
+            <th>number</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let player of players'>
+            <td>{{player.name}}</td>
+            <td>{{player.age}}</td>
+            <td>{{player.post}}</td>
+            <td>{{player.nbr}}</td>
+            <td>
+                <button class='btn btn-success' (click) ='goToDisplay(player.id)' > display</button>
+                <button class='btn btn-info'> Add a match</button>
+                <button class='btn btn-danger'> delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

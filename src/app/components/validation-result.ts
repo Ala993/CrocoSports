@@ -8,8 +8,6 @@ export class PasswordValidator {
 
     public static numstrong(control: FormControl): ValidationResult {
         let hasNumber = /\d/.test(control.value);
-        let hasUpper = /[A-Z]/.test(control.value);
-        let hasLower = /[a-z]/.test(control.value);
         const valid = hasNumber ;
         if (!valid) {
             // return what´s not valid
@@ -18,9 +16,7 @@ export class PasswordValidator {
         return null;
     }
     public static upstrong(control: FormControl): ValidationResult {
-        let hasNumber = /\d/.test(control.value);
         let hasUpper = /[A-Z]/.test(control.value);
-        let hasLower = /[a-z]/.test(control.value);
         const valid = hasUpper ;
         if (!valid) {
             // return what´s not valid
@@ -28,9 +24,7 @@ export class PasswordValidator {
         }
         return null;
     }public static lowstrong(control: FormControl): ValidationResult {
-        let hasNumber = /\d/.test(control.value);
-        let hasUpper = /[A-Z]/.test(control.value);
-        let hasLower = /[a-z]/.test(control.value);
+       let hasLower = /[a-z]/.test(control.value);
         const valid = hasLower ;
         if (!valid) {
             // return what´s not valid

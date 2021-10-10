@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { MatchService } from 'src/app/services/match.service';
+import { Match } from './Match';
 
 @Component({
   selector: 'app-add-match',
@@ -7,21 +10,29 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./add-match.component.css']
 })
 export class AddMatchComponent implements OnInit {
-  match : any = {};
-  addMatchForm : FormGroup;
+  match: any = {};
+  addMatchForm: FormGroup;
 
-  constructor(private formBuiler: FormBuilder) { }
+  constructor(private formBuiler: FormBuilder, private matchService: MatchService , private router : Router) { }
 
   ngOnInit() {
-    this.addMatchForm= this.formBuiler.group({
-      scoreOne  :[''],
-      scoreTwo :[''],
-      teamOne : [''],
-      teamTwo :['']
-      
-    });  
+    this.addMatchForm = this.formBuiler.group({
+
+      scoreOne: [''],
+      scoreTwo: [''],
+      teamOne: [''],
+      teamTwo: ['']
+
+    });
+
   }
-  addmatch () {
-  console.log('Here my Object', this.match)    
+  addmatch() {
+    this.matchService.addMatch(this.match).subscribe(
+      () => {
+        console.log('Match added');
+      }
+    );
+    this.router.navigate(['admin']);
+
   }
 }
