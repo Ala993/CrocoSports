@@ -6,17 +6,18 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
-  
-  @Input() m : any ;
+
+  @Input() m: any;
   constructor() { }
 
   ngOnInit() {
   }
-  winLoss (scoreOne, scoreTwo) : string{
-  if (scoreOne>scoreTwo) {
-   return '(win)'} 
-    else if (scoreOne<scoreTwo) { return '(loss)'} 
-    else { return '(draw)'}
+  winLoss(scoreOne, scoreTwo) {
+    if (scoreOne > scoreTwo) {
+      return ['(win)','green'];
+    }
+    else if (scoreOne < scoreTwo) { return ['(loss)','red'] }
+    else { return ['(draw)','blue'] }
   }
 
 }

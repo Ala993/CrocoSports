@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class MatchService {
 
-  SERVER_URL: string = "api/matches";
+  SERVER_URL: string = "http://localhost:8500/api/clients";
   constructor(private httpClient: HttpClient) { }
 
   public getMatchById(matchId) {

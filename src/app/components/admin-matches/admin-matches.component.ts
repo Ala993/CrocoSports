@@ -12,9 +12,8 @@ export class AdminMatchesComponent implements OnInit {
   constructor(private router: Router, private matchService: MatchService) { }
 
   ngOnInit() {
-    /* this.matches = JSON.parse(localStorage.getItem('matches'));
-    this.matchService.getAllMatches().subscribe
-     */
+    
+    console.error("worked")
     this.matchService.getAllMatches().subscribe(
       (data) => {
         console.log("Data from BE", data);
@@ -37,5 +36,7 @@ export class AdminMatchesComponent implements OnInit {
       }
     )
   }
-
+  goToEditMatch(id) {
+    this.router.navigate([`addmatch/${id}`]);
+  }
 }

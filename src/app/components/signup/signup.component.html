@@ -4,9 +4,9 @@
         <div class="row justify-content-md-center">
             <div class="col-lg-9">
                 <form [formGroup]="signupForm">
-
+                    
                     <div class="form-group">
-                        <input type="text" class="form-control" formControlName="firstName" placeholder="Fist Name">
+                        <input type="text" class="form-control" formControlName="firstName" placeholder="First Name">
                     </div>
                     <div *ngIf='signupForm.controls["firstName"].invalid && 
                     (signupForm.controls["firstName"].dirty || signupForm.controls["firstName"].touched )'>
@@ -41,21 +41,29 @@
                         <input type="password" class="form-control" formControlName="pwd" placeholder="Password">
                         <div *ngIf='signupForm.controls["pwd"].invalid && 
                         (signupForm.controls["pwd"].dirty || signupForm.controls["pwd"].touched )'>
-                            <div *ngIf='signupForm.controls["pwd"].errors.required' style="color: red;"> Password is required</div>
-                            <div *ngIf='signupForm.controls["pwd"].errors.minlength' style="color: red;">Must have At least 8 characters in length</div>
+                            <div *ngIf='signupForm.controls["pwd"].errors.required' style="color: red;"> Password is
+                                required</div>
+                            <div *ngIf='signupForm.controls["pwd"].errors.minlength' style="color: red;">Must have At
+                                least 8 characters in length</div>
                             <div *ngIf='signupForm.controls["pwd"].errors.upstrong' style="color: red;">uppercase</div>
-                            <div *ngIf='signupForm.controls["pwd"].errors.lowstrong' style="color: red;"> LowerCase</div>
+                            <div *ngIf='signupForm.controls["pwd"].errors.lowstrong' style="color: red;"> LowerCase
+                            </div>
                             <div *ngIf='signupForm.controls["pwd"].errors.numstrong' style="color: red;">Number</div>
-                        
-                        
-                        
+
+
+
                         </div>
                     </div>
 
                     <div class="form-group">
                         <input type="password" class="form-control" formControlName="pwdConfirm"
                             placeholder="Password confirmation">
-
+                    </div>
+                    <div *ngIf="signupForm.controls['confirmPwd'].invalid &&
+                    (signupForm.controls['confirmPwd'].dirty || signupForm.controls['confirmPwd'].touched)">
+                        <div *ngIf="signupForm.controls['confirmPwd'].errors.mustMatch" class="textdanger">
+                            Confirm Pwd must match PWD
+                        </div>
                     </div>
 
                     <div class="form-group">

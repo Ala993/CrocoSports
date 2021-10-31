@@ -26,6 +26,13 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AdminPlayerComponent } from './components/admin-player/admin-player.component';
 import { AdminTeamsComponent } from './components/admin-teams/admin-teams.component';
 import { AdminMatchesComponent } from './components/admin-matches/admin-matches.component';
+import { SignupValidationComponent } from './components/signup-validation/signup-validation.component';
+import { DisplayMatchComponent } from './components/display-match/display-match.component';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { DataService } from './services/data.service';
+import { HttpClientModule } from '@angular/common/http';
+import { DisplayPlayerComponent } from './components/display-player/display-player.component';
+import { AsterixPipe } from './pipes/asterix.pipe';
 
 @NgModule({
   declarations: [
@@ -51,13 +58,19 @@ import { AdminMatchesComponent } from './components/admin-matches/admin-matches.
     AdminComponent,
     AdminPlayerComponent,
     AdminTeamsComponent,
-    AdminMatchesComponent
+    AdminMatchesComponent,
+    SignupValidationComponent,
+    DisplayMatchComponent,
+    DisplayPlayerComponent,
+    AsterixPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    HttpClientModule,
+    FormsModule,
+//    InMemoryWebApiModule.forRoot(DataService)
   ],
   providers: [],
   bootstrap: [AppComponent]

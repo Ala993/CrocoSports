@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SignupValidationService } from 'src/app/signup-validation.service';
+import { MustMatch } from '../confirm/confirmPwd';
 
 @Component({
   selector: 'app-signup',
@@ -19,8 +20,14 @@ export class SignupComponent implements OnInit {
       pwd:['', [Validators.required,Validators.minLength(8),
         this.validator.numstrong,this.validator.lowstrong,this.validator.upstrong]],
       pwdConfirm:['']
-    })
+      },
+      {
+        validators: MustMatch('pwd','pwdConfirm')
+      }
+    );
+
   }
+
   signup(){
     console.log('Signed up' , this.signupForm.value)
   }

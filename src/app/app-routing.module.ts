@@ -4,6 +4,8 @@ import { AddMatchComponent } from './components/add-match/add-match.component';
 import { AddPlayerComponent } from './components/add-player/add-player.component';
 import { AddTeamComponent } from './components/add-team/add-team.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { DisplayMatchComponent } from './components/display-match/display-match.component';
+import { DisplayPlayerComponent } from './components/display-player/display-player.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { MatchesComponent } from './components/matches/matches.component';
@@ -19,9 +21,12 @@ const routes: Routes = [
   {path :'players', component:PlayresComponent},
   {path :'signup', component : SignupComponent},
   {path : 'addmatch', component : AddMatchComponent},
+  {path : 'addmatch/:id', component : AddMatchComponent},
   {path : 'addteam', component : AddTeamComponent},
   {path : 'addplayer', component : AddPlayerComponent},
-  {path : 'admin', component : AdminComponent}
+  {path : 'admin', component : AdminComponent},
+  {path : 'displayMatch/:id' , component : DisplayMatchComponent},
+  {path : 'displayPlayer/:id' , component : DisplayPlayerComponent}
 ];
 
 @NgModule({

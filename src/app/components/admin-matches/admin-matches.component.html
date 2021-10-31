@@ -9,13 +9,13 @@
     </thead>
     <tbody>
         <tr *ngFor='let matche of matches'>
-            <td>{{matche.teamOne}}</td>
+            <td>{{matche.teamOne | asterix }}</td>
             <td>{{matche.teamTwo}}</td>
             <td>{{matche.scoreOne}}</td>
             <td>{{matche.scoreTwo}}</td>
             <td>
                 <button class='btn btn-success' (click)="goToDisplay(matche.id)"> display</button>
-                <button class='btn btn-info'> Add a match</button>
+                <button class='btn btn-info' (click)="goToEditMatch(matche.id)"> Edit match</button>
                 <button class='btn btn-danger' (click)='deleteMatch(matche.id)'> delete</button>
             </td>
         </tr>

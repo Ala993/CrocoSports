@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatchService } from 'src/app/services/match.service';
 import { Match } from '../add-match/Match';
 
 @Component({
@@ -7,16 +8,14 @@ import { Match } from '../add-match/Match';
   styleUrls: ['./matches.component.css']
 })
 export class MatchesComponent implements OnInit {
-  matches : Match []=[];
-  constructor() { }
+  matches : any = {};
+  constructor(private matchService : MatchService ) { }
 
   ngOnInit() {
-    for (let i =0 ; i< localStorage.length; i++){
-    let jsonObj: any = JSON.parse(localStorage.getItem(`${i}`));
-    let s: Match = <Match>jsonObj;
-    console.log('worker',s);
-    this.matches.push(s);
+    this.matchService.getAllMatches().subscribe(
+      (data) => { this.matches = data}
+    )
     }
-  }
 }
+
 
